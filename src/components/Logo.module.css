@@ -1,0 +1,11 @@
+.logo {
+  height: 5.2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 20px !important;
+}
