@@ -2,7 +2,7 @@
 
 Travisor React App is a web application built with React and Vite that allows users to explore and manage information about cities. The app integrates with a JSON server to provide a local API for city data.
 
-### DEMO[https://main--travisor-react.netlify.app/]
+### [DEMO](https://main--travisor-react.netlify.app/)
 
 ## Features
 
