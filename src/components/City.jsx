@@ -1,6 +1,9 @@
+import useCitiesContex from "../hooks/use-cities-context";
 import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 import { useEffect, useState } from "react";
+import Spinner from "./Spinner";
+import BackButton from "./BackButton";
 
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
@@ -10,20 +13,15 @@ const formatDate = (date) =>
     weekday: "long",
   }).format(new Date(date));
 
-const City = ({ cities }) => {
-  const [currentCity, setCurrentCity] = useState({});
+const City = () => {
+  const { getCity, currentCity, isLoading } = useCitiesContex();
   const param = useParams();
 
   useEffect(() => {
-    const data = async () => {
-      const res = await fetch(`http://localhost:3001/cities/${param.id}`);
-      const data = await res.json();
-      setCurrentCity(data);
-    };
-
-    data();
+    getCity(param.id);
   }, []);
 
+  if (isLoading) return <Spinner />;
   const { cityName, emoji, date, notes } = currentCity;
 
   return (
@@ -56,6 +54,9 @@ const City = ({ cities }) => {
         >
           Check out {cityName} on Wikipedia &rarr;
         </a>
+      </div>
+      <div>
+        <BackButton />
       </div>
     </div>
   );
