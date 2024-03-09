@@ -1,3 +1,40 @@
 {
-  "cities": []
+  "cities": [
+    {
+      "id": "7635",
+      "cityName": "Proenca-a-Nova",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2024-03-09T09:16:05.014Z",
+      "notes": "",
+      "position": {
+        "lat": "39.707186656826565",
+        "lng": "-7.844238281250001"
+      }
+    },
+    {
+      "id": "da42",
+      "cityName": "Islamabad",
+      "country": "Pakistan",
+      "emoji": "🇵🇰",
+      "date": "2024-03-09T09:16:19.729Z",
+      "notes": "",
+      "position": {
+        "lat": "33.687781758439364",
+        "lng": "73.08105468750001"
+      }
+    },
+    {
+      "id": "f8c1",
+      "cityName": "Niamey",
+      "country": "Niger (the)",
+      "emoji": "🇳🇪",
+      "date": "2024-03-09T10:18:20.933Z",
+      "notes": "",
+      "position": {
+        "lat": "13.496472765758964",
+        "lng": "2.1313476562500004"
+      }
+    }
+  ]
 }

@@ -9,6 +9,7 @@ import {
 import { useGeolocation } from "../hooks/useGeolocation";
 import { useLatLng } from "../hooks/useLatLng";
 import { useNavigate } from "react-router-dom";
+import Spinner from "./Spinner";
 import styles from "./Map.module.css";
 import Button from "./Button";
 import useCitiesContext from "../hooks/use-cities-context";
@@ -16,7 +17,7 @@ import { useEffect, useState } from "react";
 const Map = () => {
   const [lat, lng] = useLatLng();
   const [position, setPosition] = useState([40, 0]);
-  const { cities } = useCitiesContext();
+  const { cities, isLoading } = useCitiesContext();
   const {
     isLoading: isLoadingPos,
     position: geoPosition,
@@ -39,6 +40,7 @@ const Map = () => {
     </Marker>
   ));
 
+  if (isLoading || !Array.isArray(cities)) return <Spinner />;
   return (
     <div className={styles.mapContainer}>
       {!geoPosition && (
